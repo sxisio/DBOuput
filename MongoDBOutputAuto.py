@@ -6,6 +6,7 @@ from apscheduler.triggers.cron import CronTrigger
 from inputimeout import inputimeout, TimeoutOccurred
 
 def run_backup():
+    print("程序正在执行！！")
     db_file = r"C:\db\dump"
     mongo_file = r"C:\Program Files\MongoDB\Server\4.2\bin"
     db_name = "zk_model_tqmsn"
@@ -46,8 +47,22 @@ def run_backup():
             # 如果不存在，则切换到 mongo_file，执行 dump_command 拼接 db_name
             os.chdir(mongo_file)
             os.system(f"{dump_command} {db_name}")
+        os.system('cls' if os.name == 'nt' else 'clear')
+
+def countdown():
+    today = datetime.now().weekday()+1
+    if 5 >today > 1:
+        next_run_time = scheduler.get_jobs()[1].next_run_time
+    else:
+        next_run_time = scheduler.get_jobs()[0].next_run_time
+    time_remaining = next_run_time - datetime.now(next_run_time.tzinfo)
+    days = time_remaining.days
+    hours, remainder = divmod(time_remaining.seconds, 3600)
+    minutes, seconds = divmod(remainder, 60)
+    print(f"\r据下次生效还有{int(days)}日{int(hours)}时{int(minutes)}分{int(seconds)}秒", end="")
 
 scheduler = BlockingScheduler()
 trigger = CronTrigger(day_of_week='mon,thu')
 scheduler.add_job(run_backup, trigger)
+scheduler.add_job(countdown, 'interval', seconds=1)
 scheduler.start()

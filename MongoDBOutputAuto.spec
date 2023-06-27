@@ -8,7 +8,7 @@ a = Analysis(
     ['MongoDBOutputAuto.py'],
     pathex=[],
     binaries=[],
-    datas=[('apscheduler', 'apscheduler'), ('inputimeout', 'inputimeout')],
+    datas=[],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
