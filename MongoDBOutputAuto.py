@@ -50,7 +50,7 @@ def run_backup():
         os.system('cls' if os.name == 'nt' else 'clear')
 
 def countdown():
-    today = datetime.now().weekday()
+    today = datetime.now().weekday()+1
     if 5 >today > 1:
         next_run_time = scheduler.get_jobs()[1].next_run_time
     else:
