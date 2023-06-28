@@ -47,6 +47,7 @@ def run_backup():
             # 如果不存在，则切换到 mongo_file，执行 dump_command 拼接 db_name
             os.chdir(mongo_file)
             os.system(f"{dump_command} {db_name}")
+            print("程序执行完毕！！")
         os.system('cls' if os.name == 'nt' else 'clear')
 
 def countdown():
