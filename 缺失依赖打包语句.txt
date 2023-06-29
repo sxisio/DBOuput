@@ -1,0 +1,1 @@
+pyinstaller --hidden-import X --hidden-import Y yourscript.py
