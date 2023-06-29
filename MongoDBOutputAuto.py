@@ -5,7 +5,7 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.triggers.cron import CronTrigger
 from inputimeout import inputimeout, TimeoutOccurred
 
-def run_backup():
+def run_MongoDB_backup():
     print("程序正在执行！！")
     db_file = r"C:\db\dump"
     mongo_file = r"C:\Program Files\MongoDB\Server\4.2\bin"
@@ -64,6 +64,6 @@ def countdown():
 
 scheduler = BlockingScheduler()
 trigger = CronTrigger(day_of_week='mon,thu')
-scheduler.add_job(run_backup, trigger)
+scheduler.add_job(run_MongoDB_backup, trigger)
 scheduler.add_job(countdown, 'interval', seconds=1)
 scheduler.start()
