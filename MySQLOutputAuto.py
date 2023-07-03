@@ -94,7 +94,10 @@ def run_MySQL_backup():
                 try:
                     command = f"mysql -u{db_user} -p{db_password} -h {db_host} -P {db_port} -D {db_name} -e \"{sql}\""
                     print(command)
-                    result = subprocess.check_output(command, shell=True).decode('gbk')
+                    try:
+                        result = subprocess.check_output(command, shell=True).decode('utf-8')
+                    except:
+                        result = subprocess.check_output(command, shell=True).decode('gbk')
                     print("result")
                     print(result)
                 except subprocess.CalledProcessError as e:
