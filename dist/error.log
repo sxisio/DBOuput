@@ -1,0 +1,32 @@
+2023-07-03 14:41:27,822 - ERROR - Traceback (most recent call last):
+  File "MySQLOutput.py", line 64, in run_MySQL_backup
+AttributeError: 'NoneType' object has no attribute 'text'
+
+2023-07-03 14:41:53,734 - ERROR - Traceback (most recent call last):
+  File "MySQLOutput.py", line 64, in run_MySQL_backup
+AttributeError: 'NoneType' object has no attribute 'text'
+
+2023-07-03 14:42:25,158 - ERROR - Traceback (most recent call last):
+  File "MySQLOutput.py", line 81, in run_MySQL_backup
+  File "pymysql\connections.py", line 352, in __init__
+  File "pymysql\connections.py", line 636, in connect
+  File "pymysql\connections.py", line 911, in _request_authentication
+  File "pymysql\connections.py", line 729, in _read_packet
+  File "pymysql\protocol.py", line 221, in raise_for_error
+  File "pymysql\err.py", line 143, in raise_mysql_exception
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+2023-07-03 14:43:49,782 - ERROR - Traceback (most recent call last):
+  File "MySQLOutput.py", line 81, in run_MySQL_backup
+  File "pymysql\connections.py", line 352, in __init__
+  File "pymysql\connections.py", line 636, in connect
+  File "pymysql\connections.py", line 911, in _request_authentication
+  File "pymysql\connections.py", line 729, in _read_packet
+  File "pymysql\protocol.py", line 221, in raise_for_error
+  File "pymysql\err.py", line 143, in raise_mysql_exception
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+2023-07-03 14:48:07,453 - ERROR - Traceback (most recent call last):
+  File "MySQLOutput.py", line 92, in run_MySQL_backup
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb3 in position 4978: invalid start byte
+

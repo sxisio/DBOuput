@@ -1,20 +1,868 @@
-2023-06-30 15:03:10,605 - ERROR - Traceback (most recent call last):
-  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 616, in connect
-    sock = socket.create_connection(
-  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\socket.py", line 845, in create_connection
-    raise err
-  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\socket.py", line 833, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+2023-07-03 08:25:56,530 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 89, in run_MySQL_backup
+    cursor.execute(sql)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'springboot91e9z' in 'where clause'")
+
+2023-07-03 08:27:25,040 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 89, in run_MySQL_backup
+    cursor.execute(sql)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'springboot91e9z' in 'where clause'")
+
+2023-07-03 10:18:06,683 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 64, in run_MySQL_backup
+    character = root.find('Character').text
+AttributeError: 'NoneType' object has no attribute 'text'
+
+2023-07-03 10:18:27,841 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 64, in run_MySQL_backup
+    character = root.find('Character').text
+AttributeError: 'NoneType' object has no attribute 'text'
+
+2023-07-03 11:15:27,220 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 89, in run_MySQL_backup
+    command = "mysql -u%s-p%s -h %s -P  %s -D %s -sqp -e %s" %db_user %db_password %db_host %db_port %db_name %sql
+TypeError: not enough arguments for format string
+
+2023-07-03 11:21:58,827 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 94, in run_MySQL_backup
+    output = result.stdout.split("\n")[1:]
+AttributeError: 'int' object has no attribute 'stdout'
+
+2023-07-03 11:23:53,635 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 94, in run_MySQL_backup
+    output = result.stdout.split("\n")[1:]
+AttributeError: 'str' object has no attribute 'stdout'
+
+2023-07-03 11:29:56,662 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 109, in run_MySQL_backup
+    cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ': [Warning] Using a password on the command line interface can be insecure.' at line 1")
+
+2023-07-03 11:33:42,597 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 109, in run_MySQL_backup
+    cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'springboot91e9z.table_name' doesn't exist")
+
+2023-07-03 11:38:02,188 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 102, in run_MySQL_backup
+    output =output.replace('\r', '')
+AttributeError: 'list' object has no attribute 'replace'
+
+2023-07-03 11:39:34,452 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 102, in run_MySQL_backup
+    output =[item.replace('\r', '') for item in output]
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 102, in <listcomp>
+    output =[item.replace('\r', '') for item in output]
+AttributeError: 'list' object has no attribute 'replace'
+
+2023-07-03 11:40:17,520 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 102, in run_MySQL_backup
+    output =[item.split('\r', '') for item in output]
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 102, in <listcomp>
+    output =[item.split('\r', '') for item in output]
+AttributeError: 'list' object has no attribute 'split'
+
+2023-07-03 11:40:37,002 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 102, in run_MySQL_backup
+    output =[item.split('\r') for item in output]
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 102, in <listcomp>
+    output =[item.split('\r') for item in output]
+AttributeError: 'list' object has no attribute 'split'
+
+2023-07-03 11:48:06,086 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 141, in run_MySQL_backup
+    cmd = f"mysqldump -h {db_host} -P {db_port} -u {db_user} -p{db_password} {db_name} {' '.join(tables_to_backup)} > {backup_file}"
+TypeError: sequence item 0: expected str instance, list found
+
+2023-07-03 11:48:21,298 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 141, in run_MySQL_backup
+    cmd = f"mysqldump -h {db_host} -P {db_port} -u {db_user} -p{db_password} {db_name} {' '.join(tables_to_backup)} > {backup_file}"
+TypeError: sequence item 0: expected str instance, list found
+
+2023-07-03 11:50:15,624 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 141, in run_MySQL_backup
+    cmd = f"mysqldump -h {db_host} -P {db_port} -u {db_user} -p{db_password} {db_name} {' '.join(tables_to_backup)} > {backup_file}"
+TypeError: sequence item 0: expected str instance, list found
+
+2023-07-03 14:49:27,951 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 91, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT).decode()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb3 in position 4978: invalid start byte
+
+2023-07-03 14:51:09,252 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 96, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT).decode()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb3 in position 4978: invalid start byte
+
+2023-07-03 14:57:37,402 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 96, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT).decode()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb3 in position 4978: invalid start byte
+
+2023-07-03 15:00:47,531 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 97, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT).decode()
+  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\subprocess.py", line 421, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'mysql -uroot -proot -h localhost -P 3306 -D test -e "b"SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.TABLES  WHERE  TABLE_SCHEMA = 'test' AND TABLE_NAME REGEXP '^[^0-9]+$' AND TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME  NOT IN (SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.TABLES  WHERE  TABLE_TYPE = 'VIEW') AND TABLE_NAME NOT IN ('CHARACTER_SETS','COLLATIONS','COLLATION_CHARACTER_SET_APPLICABILITY','COLUMNS','COLUMN_PRIVILEGES','ENGINES','EVENTS','FILES','GLOBAL_STATUS','GLOBAL_VARIABLES','KEY_COLUMN_USAGE','OPTIMIZER_TRACE','PARAMETERS','PARTITIONS','PLUGINS','PROCESSLIST','PROFILING','REFERENTIAL_CONSTRAINTS','ROUTINES','SCHEMATA','SCHEMA_PRIVILEGES','SESSION_STATUS','SESSION_VARIABLES','STATISTICS','TABLES','TABLESPACES','TABLE_CONSTRAINTS','TABLE_PRIVILEGES','TRIGGERS','USER_PRIVILEGES','VIEWS','INNODB_LOCKS','INNODB_TRX','INNODB_SYS_DATAFILES','INNODB_FT_CONFIG','INNODB_SYS_VIRTUAL','INNODB_CMP','INNODB_FT_BEING_DELETED','INNODB_CMP_RESET','INNODB_CMP_PER_INDEX','INNODB_CMPMEM_RESET','INNODB_FT_DELETED','INNODB_BUFFER_PAGE_LRU','INNODB_LOCK_WAITS','INNODB_TEMP_TABLE_INFO','INNODB_SYS_INDEXES','INNODB_SYS_TABLES','INNODB_SYS_FIELDS','INNODB_CMP_PER_INDEX_RESET','INNODB_BUFFER_PAGE','INNODB_FT_DEFAULT_STOPWORD','INNODB_FT_INDEX_TABLE','INNODB_FT_INDEX_CACHE','INNODB_SYS_TABLESPACES','INNODB_METRICS','INNODB_SYS_FOREIGN_COLS','INNODB_CMPMEM','INNODB_BUFFER_POOL_STATS','INNODB_SYS_COLUMNS','INNODB_SYS_FOREIGN','INNODB_SYS_TABLESTATS','columns_priv','db','engine_cost','event','func','general_log','gtid_executed','help_category','help_keyword','help_relation','help_topic','innodb_index_stats','innodb_table_stats','ndb_binlog_index','plugin','proc','procs_priv','proxies_priv','server_cost','servers','slave_master_info','slave_relay_log_info','slave_worker_info','slow_log','tables_priv','time_zone','time_zone_leap_second','time_zone_name','time_zone_transition','time_zone_transition_type','user','accounts','cond_instances','events_stages_current','events_stages_history','events_stages_history_long','events_stages_summary_by_account_by_event_name','events_stages_summary_by_host_by_event_name','events_stages_summary_by_thread_by_event_name','events_stages_summary_by_user_by_event_name','events_stages_summary_global_by_event_name','events_statements_current','events_statements_history','events_statements_history_long','events_statements_summary_by_account_by_event_name','events_statements_summary_by_digest','events_statements_summary_by_host_by_event_name','events_statements_summary_by_program','events_statements_summary_by_thread_by_event_name','events_statements_summary_by_user_by_event_name','events_statements_summary_global_by_event_name','events_transactions_current','events_transactions_history','events_transactions_history_long','events_transactions_summary_by_account_by_event_name','events_transactions_summary_by_host_by_event_name','events_transactions_summary_by_thread_by_event_name','events_transactions_summary_by_user_by_event_name','events_transactions_summary_global_by_event_name','events_waits_current','events_waits_history','events_waits_history_long','events_waits_summary_by_account_by_event_name','events_waits_summary_by_host_by_event_name','events_waits_summary_by_instance','events_waits_summary_by_thread_by_event_name','events_waits_summary_by_user_by_event_name','events_waits_summary_global_by_event_name','file_instances','file_summary_by_event_name','file_summary_by_instance','host_cache','hosts','memory_summary_by_account_by_event_name','memory_summary_by_host_by_event_name','memory_summary_by_thread_by_event_name','memory_summary_by_user_by_event_name','memory_summary_global_by_event_name','metadata_locks','mutex_instances','objects_summary_global_by_type','performance_timers','prepared_statements_instances','replication_applier_configuration','replication_applier_status','replication_applier_status_by_coordinator','replication_applier_status_by_worker','replication_connection_configuration','replication_connection_status','replication_group_member_stats','replication_group_members','rwlock_instances','session_account_connect_attrs','session_connect_attrs','setup_actors','setup_consumers','setup_instruments','setup_objects','setup_timers','socket_instances','socket_summary_by_event_name','socket_summary_by_instance','status_by_account','status_by_host','status_by_thread','status_by_user','table_handles','table_io_waits_summary_by_index_usage','table_io_waits_summary_by_table','table_lock_waits_summary_by_table','threads','user_variables_by_thread','users','variables_by_thread','host_summary','host_summary_by_file_io','host_summary_by_file_io_type','host_summary_by_stages','host_summary_by_statement_latency','host_summary_by_statement_type','innodb_buffer_stats_by_schema','innodb_buffer_stats_by_table','io_by_thread_by_latency','io_global_by_file_by_bytes','io_global_by_file_by_latency','io_global_by_wait_by_bytes','io_global_by_wait_by_latency','latest_file_io','memory_by_host_by_current_bytes','memory_by_thread_by_current_bytes','memory_by_user_by_current_bytes','memory_global_by_current_bytes','memory_global_total','metrics','ps_check_lost_instrumentation','schema_auto_increment_columns','schema_index_statistics','schema_object_overview','schema_redundant_indexes','schema_table_lock_waits','schema_table_statistics','schema_table_statistics_with_buffer','schema_tables_with_full_table_scans','schema_unused_indexes','session','session_ssl_status','statement_analysis','statements_with_errors_or_warnings','statements_with_full_table_scans','statements_with_sorting','statements_with_temp_tables','sys_config','user_summary','user_summary_by_file_io','user_summary_by_file_io_type','user_summary_by_stages','user_summary_by_statement_latency','user_summary_by_statement_type','version','wait_classes_global_by_avg_latency','wait_classes_global_by_latency','waits_by_host_by_latency','waits_by_user_by_latency','waits_global_by_latency','x$host_summary','x$host_summary_by_file_io','x$host_summary_by_file_io_type','x$host_summary_by_stages','x$host_summary_by_statement_latency','x$host_summary_by_statement_type','x$innodb_buffer_stats_by_schema','x$innodb_buffer_stats_by_table','x$innodb_lock_waits','x$io_by_thread_by_latency','x$io_global_by_file_by_bytes','x$io_global_by_file_by_latency','x$io_global_by_wait_by_bytes','x$io_global_by_wait_by_latency','x$latest_file_io','x$memory_by_host_by_current_bytes','x$memory_by_thread_by_current_bytes','x$memory_by_user_by_current_bytes','x$memory_global_by_current_bytes','x$memory_global_total','x$processlist','x$ps_digest_avg_latency_distribution','x$ps_schema_table_statistics_io','x$schema_flattened_keys','x$schema_index_statistics','x$schema_table_lock_waits','x$schema_table_statistics','x$schema_table_statistics_with_buffer','x$schema_tables_with_full_table_scans','x$session','x$statement_analysis','x$statements_with_errors_or_warnings','x$statements_with_full_table_scans','x$statements_with_sorting','x$statements_with_temp_tables','x$user_summary','x$user_summary_by_file_io','x$user_summary_by_file_io_type','x$user_summary_by_stages','x$user_summary_by_statement_latency','x$user_summary_by_statement_type','x$wait_classes_global_by_avg_latency','x$wait_classes_global_by_latency','x$waits_by_host_by_latency','x$waits_by_user_by_latency','x$waits_global_by_latency','sys_user')  ""' returned non-zero exit status 1.
+
+2023-07-03 15:00:47,531 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 102, in run_MySQL_backup
+    print(result)
+UnboundLocalError: local variable 'result' referenced before assignment
+
+2023-07-03 15:01:32,419 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 97, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT).decode()
+  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\subprocess.py", line 421, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'mysql -uroot -proot -h localhost -P 3306 -D test -e "b"SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.TABLES  WHERE  TABLE_SCHEMA = 'test' AND TABLE_NAME REGEXP '^[^0-9]+$' AND TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME  NOT IN (SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.TABLES  WHERE  TABLE_TYPE = 'VIEW') AND TABLE_NAME NOT IN ('CHARACTER_SETS','COLLATIONS','COLLATION_CHARACTER_SET_APPLICABILITY','COLUMNS','COLUMN_PRIVILEGES','ENGINES','EVENTS','FILES','GLOBAL_STATUS','GLOBAL_VARIABLES','KEY_COLUMN_USAGE','OPTIMIZER_TRACE','PARAMETERS','PARTITIONS','PLUGINS','PROCESSLIST','PROFILING','REFERENTIAL_CONSTRAINTS','ROUTINES','SCHEMATA','SCHEMA_PRIVILEGES','SESSION_STATUS','SESSION_VARIABLES','STATISTICS','TABLES','TABLESPACES','TABLE_CONSTRAINTS','TABLE_PRIVILEGES','TRIGGERS','USER_PRIVILEGES','VIEWS','INNODB_LOCKS','INNODB_TRX','INNODB_SYS_DATAFILES','INNODB_FT_CONFIG','INNODB_SYS_VIRTUAL','INNODB_CMP','INNODB_FT_BEING_DELETED','INNODB_CMP_RESET','INNODB_CMP_PER_INDEX','INNODB_CMPMEM_RESET','INNODB_FT_DELETED','INNODB_BUFFER_PAGE_LRU','INNODB_LOCK_WAITS','INNODB_TEMP_TABLE_INFO','INNODB_SYS_INDEXES','INNODB_SYS_TABLES','INNODB_SYS_FIELDS','INNODB_CMP_PER_INDEX_RESET','INNODB_BUFFER_PAGE','INNODB_FT_DEFAULT_STOPWORD','INNODB_FT_INDEX_TABLE','INNODB_FT_INDEX_CACHE','INNODB_SYS_TABLESPACES','INNODB_METRICS','INNODB_SYS_FOREIGN_COLS','INNODB_CMPMEM','INNODB_BUFFER_POOL_STATS','INNODB_SYS_COLUMNS','INNODB_SYS_FOREIGN','INNODB_SYS_TABLESTATS','columns_priv','db','engine_cost','event','func','general_log','gtid_executed','help_category','help_keyword','help_relation','help_topic','innodb_index_stats','innodb_table_stats','ndb_binlog_index','plugin','proc','procs_priv','proxies_priv','server_cost','servers','slave_master_info','slave_relay_log_info','slave_worker_info','slow_log','tables_priv','time_zone','time_zone_leap_second','time_zone_name','time_zone_transition','time_zone_transition_type','user','accounts','cond_instances','events_stages_current','events_stages_history','events_stages_history_long','events_stages_summary_by_account_by_event_name','events_stages_summary_by_host_by_event_name','events_stages_summary_by_thread_by_event_name','events_stages_summary_by_user_by_event_name','events_stages_summary_global_by_event_name','events_statements_current','events_statements_history','events_statements_history_long','events_statements_summary_by_account_by_event_name','events_statements_summary_by_digest','events_statements_summary_by_host_by_event_name','events_statements_summary_by_program','events_statements_summary_by_thread_by_event_name','events_statements_summary_by_user_by_event_name','events_statements_summary_global_by_event_name','events_transactions_current','events_transactions_history','events_transactions_history_long','events_transactions_summary_by_account_by_event_name','events_transactions_summary_by_host_by_event_name','events_transactions_summary_by_thread_by_event_name','events_transactions_summary_by_user_by_event_name','events_transactions_summary_global_by_event_name','events_waits_current','events_waits_history','events_waits_history_long','events_waits_summary_by_account_by_event_name','events_waits_summary_by_host_by_event_name','events_waits_summary_by_instance','events_waits_summary_by_thread_by_event_name','events_waits_summary_by_user_by_event_name','events_waits_summary_global_by_event_name','file_instances','file_summary_by_event_name','file_summary_by_instance','host_cache','hosts','memory_summary_by_account_by_event_name','memory_summary_by_host_by_event_name','memory_summary_by_thread_by_event_name','memory_summary_by_user_by_event_name','memory_summary_global_by_event_name','metadata_locks','mutex_instances','objects_summary_global_by_type','performance_timers','prepared_statements_instances','replication_applier_configuration','replication_applier_status','replication_applier_status_by_coordinator','replication_applier_status_by_worker','replication_connection_configuration','replication_connection_status','replication_group_member_stats','replication_group_members','rwlock_instances','session_account_connect_attrs','session_connect_attrs','setup_actors','setup_consumers','setup_instruments','setup_objects','setup_timers','socket_instances','socket_summary_by_event_name','socket_summary_by_instance','status_by_account','status_by_host','status_by_thread','status_by_user','table_handles','table_io_waits_summary_by_index_usage','table_io_waits_summary_by_table','table_lock_waits_summary_by_table','threads','user_variables_by_thread','users','variables_by_thread','host_summary','host_summary_by_file_io','host_summary_by_file_io_type','host_summary_by_stages','host_summary_by_statement_latency','host_summary_by_statement_type','innodb_buffer_stats_by_schema','innodb_buffer_stats_by_table','io_by_thread_by_latency','io_global_by_file_by_bytes','io_global_by_file_by_latency','io_global_by_wait_by_bytes','io_global_by_wait_by_latency','latest_file_io','memory_by_host_by_current_bytes','memory_by_thread_by_current_bytes','memory_by_user_by_current_bytes','memory_global_by_current_bytes','memory_global_total','metrics','ps_check_lost_instrumentation','schema_auto_increment_columns','schema_index_statistics','schema_object_overview','schema_redundant_indexes','schema_table_lock_waits','schema_table_statistics','schema_table_statistics_with_buffer','schema_tables_with_full_table_scans','schema_unused_indexes','session','session_ssl_status','statement_analysis','statements_with_errors_or_warnings','statements_with_full_table_scans','statements_with_sorting','statements_with_temp_tables','sys_config','user_summary','user_summary_by_file_io','user_summary_by_file_io_type','user_summary_by_stages','user_summary_by_statement_latency','user_summary_by_statement_type','version','wait_classes_global_by_avg_latency','wait_classes_global_by_latency','waits_by_host_by_latency','waits_by_user_by_latency','waits_global_by_latency','x$host_summary','x$host_summary_by_file_io','x$host_summary_by_file_io_type','x$host_summary_by_stages','x$host_summary_by_statement_latency','x$host_summary_by_statement_type','x$innodb_buffer_stats_by_schema','x$innodb_buffer_stats_by_table','x$innodb_lock_waits','x$io_by_thread_by_latency','x$io_global_by_file_by_bytes','x$io_global_by_file_by_latency','x$io_global_by_wait_by_bytes','x$io_global_by_wait_by_latency','x$latest_file_io','x$memory_by_host_by_current_bytes','x$memory_by_thread_by_current_bytes','x$memory_by_user_by_current_bytes','x$memory_global_by_current_bytes','x$memory_global_total','x$processlist','x$ps_digest_avg_latency_distribution','x$ps_schema_table_statistics_io','x$schema_flattened_keys','x$schema_index_statistics','x$schema_table_lock_waits','x$schema_table_statistics','x$schema_table_statistics_with_buffer','x$schema_tables_with_full_table_scans','x$session','x$statement_analysis','x$statements_with_errors_or_warnings','x$statements_with_full_table_scans','x$statements_with_sorting','x$statements_with_temp_tables','x$user_summary','x$user_summary_by_file_io','x$user_summary_by_file_io_type','x$user_summary_by_stages','x$user_summary_by_statement_latency','x$user_summary_by_statement_type','x$wait_classes_global_by_avg_latency','x$wait_classes_global_by_latency','x$waits_by_host_by_latency','x$waits_by_user_by_latency','x$waits_global_by_latency','sys_user')  ""' returned non-zero exit status 1.
+
+2023-07-03 15:01:32,420 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 102, in run_MySQL_backup
+    print(result)
+UnboundLocalError: local variable 'result' referenced before assignment
+
+2023-07-03 15:02:35,098 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 97, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT).decode()
+  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\subprocess.py", line 421, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\subprocess.py", line 503, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\subprocess.py", line 971, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\subprocess.py", line 1372, in _execute_child
+    raise TypeError('bytes args is not allowed on Windows')
+TypeError: bytes args is not allowed on Windows
+
+2023-07-03 15:02:57,103 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 97, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT).decode()
+  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\subprocess.py", line 421, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\subprocess.py", line 503, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\subprocess.py", line 971, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\subprocess.py", line 1372, in _execute_child
+    raise TypeError('bytes args is not allowed on Windows')
+TypeError: bytes args is not allowed on Windows
+
+2023-07-03 15:03:08,364 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 97, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT).decode()
+  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\subprocess.py", line 421, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'mysql -uroot -proot -h localhost -P 3306 -D test -e "b"SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.TABLES  WHERE  TABLE_SCHEMA = 'test' AND TABLE_NAME REGEXP '^[^0-9]+$' AND TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME  NOT IN (SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.TABLES  WHERE  TABLE_TYPE = 'VIEW') AND TABLE_NAME NOT IN ('CHARACTER_SETS','COLLATIONS','COLLATION_CHARACTER_SET_APPLICABILITY','COLUMNS','COLUMN_PRIVILEGES','ENGINES','EVENTS','FILES','GLOBAL_STATUS','GLOBAL_VARIABLES','KEY_COLUMN_USAGE','OPTIMIZER_TRACE','PARAMETERS','PARTITIONS','PLUGINS','PROCESSLIST','PROFILING','REFERENTIAL_CONSTRAINTS','ROUTINES','SCHEMATA','SCHEMA_PRIVILEGES','SESSION_STATUS','SESSION_VARIABLES','STATISTICS','TABLES','TABLESPACES','TABLE_CONSTRAINTS','TABLE_PRIVILEGES','TRIGGERS','USER_PRIVILEGES','VIEWS','INNODB_LOCKS','INNODB_TRX','INNODB_SYS_DATAFILES','INNODB_FT_CONFIG','INNODB_SYS_VIRTUAL','INNODB_CMP','INNODB_FT_BEING_DELETED','INNODB_CMP_RESET','INNODB_CMP_PER_INDEX','INNODB_CMPMEM_RESET','INNODB_FT_DELETED','INNODB_BUFFER_PAGE_LRU','INNODB_LOCK_WAITS','INNODB_TEMP_TABLE_INFO','INNODB_SYS_INDEXES','INNODB_SYS_TABLES','INNODB_SYS_FIELDS','INNODB_CMP_PER_INDEX_RESET','INNODB_BUFFER_PAGE','INNODB_FT_DEFAULT_STOPWORD','INNODB_FT_INDEX_TABLE','INNODB_FT_INDEX_CACHE','INNODB_SYS_TABLESPACES','INNODB_METRICS','INNODB_SYS_FOREIGN_COLS','INNODB_CMPMEM','INNODB_BUFFER_POOL_STATS','INNODB_SYS_COLUMNS','INNODB_SYS_FOREIGN','INNODB_SYS_TABLESTATS','columns_priv','db','engine_cost','event','func','general_log','gtid_executed','help_category','help_keyword','help_relation','help_topic','innodb_index_stats','innodb_table_stats','ndb_binlog_index','plugin','proc','procs_priv','proxies_priv','server_cost','servers','slave_master_info','slave_relay_log_info','slave_worker_info','slow_log','tables_priv','time_zone','time_zone_leap_second','time_zone_name','time_zone_transition','time_zone_transition_type','user','accounts','cond_instances','events_stages_current','events_stages_history','events_stages_history_long','events_stages_summary_by_account_by_event_name','events_stages_summary_by_host_by_event_name','events_stages_summary_by_thread_by_event_name','events_stages_summary_by_user_by_event_name','events_stages_summary_global_by_event_name','events_statements_current','events_statements_history','events_statements_history_long','events_statements_summary_by_account_by_event_name','events_statements_summary_by_digest','events_statements_summary_by_host_by_event_name','events_statements_summary_by_program','events_statements_summary_by_thread_by_event_name','events_statements_summary_by_user_by_event_name','events_statements_summary_global_by_event_name','events_transactions_current','events_transactions_history','events_transactions_history_long','events_transactions_summary_by_account_by_event_name','events_transactions_summary_by_host_by_event_name','events_transactions_summary_by_thread_by_event_name','events_transactions_summary_by_user_by_event_name','events_transactions_summary_global_by_event_name','events_waits_current','events_waits_history','events_waits_history_long','events_waits_summary_by_account_by_event_name','events_waits_summary_by_host_by_event_name','events_waits_summary_by_instance','events_waits_summary_by_thread_by_event_name','events_waits_summary_by_user_by_event_name','events_waits_summary_global_by_event_name','file_instances','file_summary_by_event_name','file_summary_by_instance','host_cache','hosts','memory_summary_by_account_by_event_name','memory_summary_by_host_by_event_name','memory_summary_by_thread_by_event_name','memory_summary_by_user_by_event_name','memory_summary_global_by_event_name','metadata_locks','mutex_instances','objects_summary_global_by_type','performance_timers','prepared_statements_instances','replication_applier_configuration','replication_applier_status','replication_applier_status_by_coordinator','replication_applier_status_by_worker','replication_connection_configuration','replication_connection_status','replication_group_member_stats','replication_group_members','rwlock_instances','session_account_connect_attrs','session_connect_attrs','setup_actors','setup_consumers','setup_instruments','setup_objects','setup_timers','socket_instances','socket_summary_by_event_name','socket_summary_by_instance','status_by_account','status_by_host','status_by_thread','status_by_user','table_handles','table_io_waits_summary_by_index_usage','table_io_waits_summary_by_table','table_lock_waits_summary_by_table','threads','user_variables_by_thread','users','variables_by_thread','host_summary','host_summary_by_file_io','host_summary_by_file_io_type','host_summary_by_stages','host_summary_by_statement_latency','host_summary_by_statement_type','innodb_buffer_stats_by_schema','innodb_buffer_stats_by_table','io_by_thread_by_latency','io_global_by_file_by_bytes','io_global_by_file_by_latency','io_global_by_wait_by_bytes','io_global_by_wait_by_latency','latest_file_io','memory_by_host_by_current_bytes','memory_by_thread_by_current_bytes','memory_by_user_by_current_bytes','memory_global_by_current_bytes','memory_global_total','metrics','ps_check_lost_instrumentation','schema_auto_increment_columns','schema_index_statistics','schema_object_overview','schema_redundant_indexes','schema_table_lock_waits','schema_table_statistics','schema_table_statistics_with_buffer','schema_tables_with_full_table_scans','schema_unused_indexes','session','session_ssl_status','statement_analysis','statements_with_errors_or_warnings','statements_with_full_table_scans','statements_with_sorting','statements_with_temp_tables','sys_config','user_summary','user_summary_by_file_io','user_summary_by_file_io_type','user_summary_by_stages','user_summary_by_statement_latency','user_summary_by_statement_type','version','wait_classes_global_by_avg_latency','wait_classes_global_by_latency','waits_by_host_by_latency','waits_by_user_by_latency','waits_global_by_latency','x$host_summary','x$host_summary_by_file_io','x$host_summary_by_file_io_type','x$host_summary_by_stages','x$host_summary_by_statement_latency','x$host_summary_by_statement_type','x$innodb_buffer_stats_by_schema','x$innodb_buffer_stats_by_table','x$innodb_lock_waits','x$io_by_thread_by_latency','x$io_global_by_file_by_bytes','x$io_global_by_file_by_latency','x$io_global_by_wait_by_bytes','x$io_global_by_wait_by_latency','x$latest_file_io','x$memory_by_host_by_current_bytes','x$memory_by_thread_by_current_bytes','x$memory_by_user_by_current_bytes','x$memory_global_by_current_bytes','x$memory_global_total','x$processlist','x$ps_digest_avg_latency_distribution','x$ps_schema_table_statistics_io','x$schema_flattened_keys','x$schema_index_statistics','x$schema_table_lock_waits','x$schema_table_statistics','x$schema_table_statistics_with_buffer','x$schema_tables_with_full_table_scans','x$session','x$statement_analysis','x$statements_with_errors_or_warnings','x$statements_with_full_table_scans','x$statements_with_sorting','x$statements_with_temp_tables','x$user_summary','x$user_summary_by_file_io','x$user_summary_by_file_io_type','x$user_summary_by_stages','x$user_summary_by_statement_latency','x$user_summary_by_statement_type','x$wait_classes_global_by_avg_latency','x$wait_classes_global_by_latency','x$waits_by_host_by_latency','x$waits_by_user_by_latency','x$waits_global_by_latency','sys_user')  ""' returned non-zero exit status 1.
+
+2023-07-03 15:03:08,364 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 102, in run_MySQL_backup
+    print(result)
+UnboundLocalError: local variable 'result' referenced before assignment
+
+2023-07-03 15:04:10,837 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 97, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT).decode()
+  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\subprocess.py", line 421, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'mysql -u{db_user} -p{db_password} -h {db_host} -P {db_port} -D {db_name} -e "{encoded_string}"' returned non-zero exit status 9.
+
+2023-07-03 15:04:10,837 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 102, in run_MySQL_backup
+    print(result)
+UnboundLocalError: local variable 'result' referenced before assignment
+
+2023-07-03 15:04:19,514 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 97, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT).decode()
+  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\subprocess.py", line 421, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'mysql -uroot -proot -h localhost -P 3306 -D test -e "b"SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.TABLES  WHERE  TABLE_SCHEMA = 'test' AND TABLE_NAME REGEXP '^[^0-9]+$' AND TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME  NOT IN (SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.TABLES  WHERE  TABLE_TYPE = 'VIEW') AND TABLE_NAME NOT IN ('CHARACTER_SETS','COLLATIONS','COLLATION_CHARACTER_SET_APPLICABILITY','COLUMNS','COLUMN_PRIVILEGES','ENGINES','EVENTS','FILES','GLOBAL_STATUS','GLOBAL_VARIABLES','KEY_COLUMN_USAGE','OPTIMIZER_TRACE','PARAMETERS','PARTITIONS','PLUGINS','PROCESSLIST','PROFILING','REFERENTIAL_CONSTRAINTS','ROUTINES','SCHEMATA','SCHEMA_PRIVILEGES','SESSION_STATUS','SESSION_VARIABLES','STATISTICS','TABLES','TABLESPACES','TABLE_CONSTRAINTS','TABLE_PRIVILEGES','TRIGGERS','USER_PRIVILEGES','VIEWS','INNODB_LOCKS','INNODB_TRX','INNODB_SYS_DATAFILES','INNODB_FT_CONFIG','INNODB_SYS_VIRTUAL','INNODB_CMP','INNODB_FT_BEING_DELETED','INNODB_CMP_RESET','INNODB_CMP_PER_INDEX','INNODB_CMPMEM_RESET','INNODB_FT_DELETED','INNODB_BUFFER_PAGE_LRU','INNODB_LOCK_WAITS','INNODB_TEMP_TABLE_INFO','INNODB_SYS_INDEXES','INNODB_SYS_TABLES','INNODB_SYS_FIELDS','INNODB_CMP_PER_INDEX_RESET','INNODB_BUFFER_PAGE','INNODB_FT_DEFAULT_STOPWORD','INNODB_FT_INDEX_TABLE','INNODB_FT_INDEX_CACHE','INNODB_SYS_TABLESPACES','INNODB_METRICS','INNODB_SYS_FOREIGN_COLS','INNODB_CMPMEM','INNODB_BUFFER_POOL_STATS','INNODB_SYS_COLUMNS','INNODB_SYS_FOREIGN','INNODB_SYS_TABLESTATS','columns_priv','db','engine_cost','event','func','general_log','gtid_executed','help_category','help_keyword','help_relation','help_topic','innodb_index_stats','innodb_table_stats','ndb_binlog_index','plugin','proc','procs_priv','proxies_priv','server_cost','servers','slave_master_info','slave_relay_log_info','slave_worker_info','slow_log','tables_priv','time_zone','time_zone_leap_second','time_zone_name','time_zone_transition','time_zone_transition_type','user','accounts','cond_instances','events_stages_current','events_stages_history','events_stages_history_long','events_stages_summary_by_account_by_event_name','events_stages_summary_by_host_by_event_name','events_stages_summary_by_thread_by_event_name','events_stages_summary_by_user_by_event_name','events_stages_summary_global_by_event_name','events_statements_current','events_statements_history','events_statements_history_long','events_statements_summary_by_account_by_event_name','events_statements_summary_by_digest','events_statements_summary_by_host_by_event_name','events_statements_summary_by_program','events_statements_summary_by_thread_by_event_name','events_statements_summary_by_user_by_event_name','events_statements_summary_global_by_event_name','events_transactions_current','events_transactions_history','events_transactions_history_long','events_transactions_summary_by_account_by_event_name','events_transactions_summary_by_host_by_event_name','events_transactions_summary_by_thread_by_event_name','events_transactions_summary_by_user_by_event_name','events_transactions_summary_global_by_event_name','events_waits_current','events_waits_history','events_waits_history_long','events_waits_summary_by_account_by_event_name','events_waits_summary_by_host_by_event_name','events_waits_summary_by_instance','events_waits_summary_by_thread_by_event_name','events_waits_summary_by_user_by_event_name','events_waits_summary_global_by_event_name','file_instances','file_summary_by_event_name','file_summary_by_instance','host_cache','hosts','memory_summary_by_account_by_event_name','memory_summary_by_host_by_event_name','memory_summary_by_thread_by_event_name','memory_summary_by_user_by_event_name','memory_summary_global_by_event_name','metadata_locks','mutex_instances','objects_summary_global_by_type','performance_timers','prepared_statements_instances','replication_applier_configuration','replication_applier_status','replication_applier_status_by_coordinator','replication_applier_status_by_worker','replication_connection_configuration','replication_connection_status','replication_group_member_stats','replication_group_members','rwlock_instances','session_account_connect_attrs','session_connect_attrs','setup_actors','setup_consumers','setup_instruments','setup_objects','setup_timers','socket_instances','socket_summary_by_event_name','socket_summary_by_instance','status_by_account','status_by_host','status_by_thread','status_by_user','table_handles','table_io_waits_summary_by_index_usage','table_io_waits_summary_by_table','table_lock_waits_summary_by_table','threads','user_variables_by_thread','users','variables_by_thread','host_summary','host_summary_by_file_io','host_summary_by_file_io_type','host_summary_by_stages','host_summary_by_statement_latency','host_summary_by_statement_type','innodb_buffer_stats_by_schema','innodb_buffer_stats_by_table','io_by_thread_by_latency','io_global_by_file_by_bytes','io_global_by_file_by_latency','io_global_by_wait_by_bytes','io_global_by_wait_by_latency','latest_file_io','memory_by_host_by_current_bytes','memory_by_thread_by_current_bytes','memory_by_user_by_current_bytes','memory_global_by_current_bytes','memory_global_total','metrics','ps_check_lost_instrumentation','schema_auto_increment_columns','schema_index_statistics','schema_object_overview','schema_redundant_indexes','schema_table_lock_waits','schema_table_statistics','schema_table_statistics_with_buffer','schema_tables_with_full_table_scans','schema_unused_indexes','session','session_ssl_status','statement_analysis','statements_with_errors_or_warnings','statements_with_full_table_scans','statements_with_sorting','statements_with_temp_tables','sys_config','user_summary','user_summary_by_file_io','user_summary_by_file_io_type','user_summary_by_stages','user_summary_by_statement_latency','user_summary_by_statement_type','version','wait_classes_global_by_avg_latency','wait_classes_global_by_latency','waits_by_host_by_latency','waits_by_user_by_latency','waits_global_by_latency','x$host_summary','x$host_summary_by_file_io','x$host_summary_by_file_io_type','x$host_summary_by_stages','x$host_summary_by_statement_latency','x$host_summary_by_statement_type','x$innodb_buffer_stats_by_schema','x$innodb_buffer_stats_by_table','x$innodb_lock_waits','x$io_by_thread_by_latency','x$io_global_by_file_by_bytes','x$io_global_by_file_by_latency','x$io_global_by_wait_by_bytes','x$io_global_by_wait_by_latency','x$latest_file_io','x$memory_by_host_by_current_bytes','x$memory_by_thread_by_current_bytes','x$memory_by_user_by_current_bytes','x$memory_global_by_current_bytes','x$memory_global_total','x$processlist','x$ps_digest_avg_latency_distribution','x$ps_schema_table_statistics_io','x$schema_flattened_keys','x$schema_index_statistics','x$schema_table_lock_waits','x$schema_table_statistics','x$schema_table_statistics_with_buffer','x$schema_tables_with_full_table_scans','x$session','x$statement_analysis','x$statements_with_errors_or_warnings','x$statements_with_full_table_scans','x$statements_with_sorting','x$statements_with_temp_tables','x$user_summary','x$user_summary_by_file_io','x$user_summary_by_file_io_type','x$user_summary_by_stages','x$user_summary_by_statement_latency','x$user_summary_by_statement_type','x$wait_classes_global_by_avg_latency','x$wait_classes_global_by_latency','x$waits_by_host_by_latency','x$waits_by_user_by_latency','x$waits_global_by_latency','sys_user')  ""' returned non-zero exit status 1.
+
+2023-07-03 15:04:19,514 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 102, in run_MySQL_backup
+    print(result)
+UnboundLocalError: local variable 'result' referenced before assignment
+
+2023-07-03 15:04:47,423 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 97, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT).decode()
+  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\subprocess.py", line 421, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "D:\Program Files\.pyenv\pyenv-win\versions\3.10.10\lib\subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'mysql -uroot -proot -h localhost -P 3306 -D test -e "b"SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.TABLES  WHERE  TABLE_SCHEMA = 'test' AND TABLE_NAME REGEXP '^[^0-9]+$' AND TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME  NOT IN (SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.TABLES  WHERE  TABLE_TYPE = 'VIEW') AND TABLE_NAME NOT IN ('CHARACTER_SETS','COLLATIONS','COLLATION_CHARACTER_SET_APPLICABILITY','COLUMNS','COLUMN_PRIVILEGES','ENGINES','EVENTS','FILES','GLOBAL_STATUS','GLOBAL_VARIABLES','KEY_COLUMN_USAGE','OPTIMIZER_TRACE','PARAMETERS','PARTITIONS','PLUGINS','PROCESSLIST','PROFILING','REFERENTIAL_CONSTRAINTS','ROUTINES','SCHEMATA','SCHEMA_PRIVILEGES','SESSION_STATUS','SESSION_VARIABLES','STATISTICS','TABLES','TABLESPACES','TABLE_CONSTRAINTS','TABLE_PRIVILEGES','TRIGGERS','USER_PRIVILEGES','VIEWS','INNODB_LOCKS','INNODB_TRX','INNODB_SYS_DATAFILES','INNODB_FT_CONFIG','INNODB_SYS_VIRTUAL','INNODB_CMP','INNODB_FT_BEING_DELETED','INNODB_CMP_RESET','INNODB_CMP_PER_INDEX','INNODB_CMPMEM_RESET','INNODB_FT_DELETED','INNODB_BUFFER_PAGE_LRU','INNODB_LOCK_WAITS','INNODB_TEMP_TABLE_INFO','INNODB_SYS_INDEXES','INNODB_SYS_TABLES','INNODB_SYS_FIELDS','INNODB_CMP_PER_INDEX_RESET','INNODB_BUFFER_PAGE','INNODB_FT_DEFAULT_STOPWORD','INNODB_FT_INDEX_TABLE','INNODB_FT_INDEX_CACHE','INNODB_SYS_TABLESPACES','INNODB_METRICS','INNODB_SYS_FOREIGN_COLS','INNODB_CMPMEM','INNODB_BUFFER_POOL_STATS','INNODB_SYS_COLUMNS','INNODB_SYS_FOREIGN','INNODB_SYS_TABLESTATS','columns_priv','db','engine_cost','event','func','general_log','gtid_executed','help_category','help_keyword','help_relation','help_topic','innodb_index_stats','innodb_table_stats','ndb_binlog_index','plugin','proc','procs_priv','proxies_priv','server_cost','servers','slave_master_info','slave_relay_log_info','slave_worker_info','slow_log','tables_priv','time_zone','time_zone_leap_second','time_zone_name','time_zone_transition','time_zone_transition_type','user','accounts','cond_instances','events_stages_current','events_stages_history','events_stages_history_long','events_stages_summary_by_account_by_event_name','events_stages_summary_by_host_by_event_name','events_stages_summary_by_thread_by_event_name','events_stages_summary_by_user_by_event_name','events_stages_summary_global_by_event_name','events_statements_current','events_statements_history','events_statements_history_long','events_statements_summary_by_account_by_event_name','events_statements_summary_by_digest','events_statements_summary_by_host_by_event_name','events_statements_summary_by_program','events_statements_summary_by_thread_by_event_name','events_statements_summary_by_user_by_event_name','events_statements_summary_global_by_event_name','events_transactions_current','events_transactions_history','events_transactions_history_long','events_transactions_summary_by_account_by_event_name','events_transactions_summary_by_host_by_event_name','events_transactions_summary_by_thread_by_event_name','events_transactions_summary_by_user_by_event_name','events_transactions_summary_global_by_event_name','events_waits_current','events_waits_history','events_waits_history_long','events_waits_summary_by_account_by_event_name','events_waits_summary_by_host_by_event_name','events_waits_summary_by_instance','events_waits_summary_by_thread_by_event_name','events_waits_summary_by_user_by_event_name','events_waits_summary_global_by_event_name','file_instances','file_summary_by_event_name','file_summary_by_instance','host_cache','hosts','memory_summary_by_account_by_event_name','memory_summary_by_host_by_event_name','memory_summary_by_thread_by_event_name','memory_summary_by_user_by_event_name','memory_summary_global_by_event_name','metadata_locks','mutex_instances','objects_summary_global_by_type','performance_timers','prepared_statements_instances','replication_applier_configuration','replication_applier_status','replication_applier_status_by_coordinator','replication_applier_status_by_worker','replication_connection_configuration','replication_connection_status','replication_group_member_stats','replication_group_members','rwlock_instances','session_account_connect_attrs','session_connect_attrs','setup_actors','setup_consumers','setup_instruments','setup_objects','setup_timers','socket_instances','socket_summary_by_event_name','socket_summary_by_instance','status_by_account','status_by_host','status_by_thread','status_by_user','table_handles','table_io_waits_summary_by_index_usage','table_io_waits_summary_by_table','table_lock_waits_summary_by_table','threads','user_variables_by_thread','users','variables_by_thread','host_summary','host_summary_by_file_io','host_summary_by_file_io_type','host_summary_by_stages','host_summary_by_statement_latency','host_summary_by_statement_type','innodb_buffer_stats_by_schema','innodb_buffer_stats_by_table','io_by_thread_by_latency','io_global_by_file_by_bytes','io_global_by_file_by_latency','io_global_by_wait_by_bytes','io_global_by_wait_by_latency','latest_file_io','memory_by_host_by_current_bytes','memory_by_thread_by_current_bytes','memory_by_user_by_current_bytes','memory_global_by_current_bytes','memory_global_total','metrics','ps_check_lost_instrumentation','schema_auto_increment_columns','schema_index_statistics','schema_object_overview','schema_redundant_indexes','schema_table_lock_waits','schema_table_statistics','schema_table_statistics_with_buffer','schema_tables_with_full_table_scans','schema_unused_indexes','session','session_ssl_status','statement_analysis','statements_with_errors_or_warnings','statements_with_full_table_scans','statements_with_sorting','statements_with_temp_tables','sys_config','user_summary','user_summary_by_file_io','user_summary_by_file_io_type','user_summary_by_stages','user_summary_by_statement_latency','user_summary_by_statement_type','version','wait_classes_global_by_avg_latency','wait_classes_global_by_latency','waits_by_host_by_latency','waits_by_user_by_latency','waits_global_by_latency','x$host_summary','x$host_summary_by_file_io','x$host_summary_by_file_io_type','x$host_summary_by_stages','x$host_summary_by_statement_latency','x$host_summary_by_statement_type','x$innodb_buffer_stats_by_schema','x$innodb_buffer_stats_by_table','x$innodb_lock_waits','x$io_by_thread_by_latency','x$io_global_by_file_by_bytes','x$io_global_by_file_by_latency','x$io_global_by_wait_by_bytes','x$io_global_by_wait_by_latency','x$latest_file_io','x$memory_by_host_by_current_bytes','x$memory_by_thread_by_current_bytes','x$memory_by_user_by_current_bytes','x$memory_global_by_current_bytes','x$memory_global_total','x$processlist','x$ps_digest_avg_latency_distribution','x$ps_schema_table_statistics_io','x$schema_flattened_keys','x$schema_index_statistics','x$schema_table_lock_waits','x$schema_table_statistics','x$schema_table_statistics_with_buffer','x$schema_tables_with_full_table_scans','x$session','x$statement_analysis','x$statements_with_errors_or_warnings','x$statements_with_full_table_scans','x$statements_with_sorting','x$statements_with_temp_tables','x$user_summary','x$user_summary_by_file_io','x$user_summary_by_file_io_type','x$user_summary_by_stages','x$user_summary_by_statement_latency','x$user_summary_by_statement_type','x$wait_classes_global_by_avg_latency','x$wait_classes_global_by_latency','x$waits_by_host_by_latency','x$waits_by_user_by_latency','x$waits_global_by_latency','sys_user')  ""' returned non-zero exit status 1.
+
+2023-07-03 15:04:47,423 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 102, in run_MySQL_backup
+    print(result)
+UnboundLocalError: local variable 'result' referenced before assignment
+
+2023-07-03 15:06:54,582 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 93, in run_MySQL_backup
+    encoded_string=sql.decode('utf-8')
+AttributeError: 'str' object has no attribute 'decode'
+
+2023-07-03 15:07:08,579 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 93, in run_MySQL_backup
+    encoded_string=sql.decode('utf-8')
+AttributeError: 'str' object has no attribute 'decode'
+
+2023-07-03 15:07:46,627 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 97, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT).decode()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb3 in position 4978: invalid start byte
+
+2023-07-03 15:09:31,404 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 97, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT).decode()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb3 in position 4978: invalid start byte
+
+2023-07-03 15:10:00,534 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 93, in run_MySQL_backup
+    sql=sql.decode('utf-8')
+AttributeError: 'str' object has no attribute 'decode'
+
+2023-07-03 15:10:14,067 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 93, in run_MySQL_backup
+    sql=sql.decode('utf-8')
+AttributeError: 'str' object has no attribute 'decode'
+
+2023-07-03 15:11:36,754 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 96, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT).decode()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb3 in position 4978: invalid start byte
+
+2023-07-03 15:13:23,449 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 96, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT).decode()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb3 in position 4978: invalid start byte
+
+2023-07-03 15:14:47,784 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 104, in run_MySQL_backup
+    lines = result.strip().split('\n')
+TypeError: a bytes-like object is required, not 'str'
+
+2023-07-03 15:17:05,693 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 102, in run_MySQL_backup
+    result=result.decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb3 in position 4978: invalid start byte
+
+2023-07-03 15:17:44,380 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 104, in run_MySQL_backup
+    lines = result.strip().split('\n')
+TypeError: a bytes-like object is required, not 'str'
+
+2023-07-03 15:23:28,916 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 96, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True).decode()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb3 in position 4896: invalid start byte
+
+2023-07-03 15:25:56,742 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 100, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True).decode()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb3 in position 4896: invalid start byte
+
+2023-07-03 15:28:04,214 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 96, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True).decode()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb3 in position 4896: invalid start byte
+
+2023-07-03 15:30:49,408 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 96, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True).decode()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb3 in position 4896: invalid start byte
+
+2023-07-03 15:34:42,602 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 107, in run_MySQL_backup
+    lines = result.strip().split('\n')
+AttributeError: 'int' object has no attribute 'strip'
+
+2023-07-03 15:35:38,629 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 107, in run_MySQL_backup
+    lines = result.strip().split('\n')
+AttributeError: 'CompletedProcess' object has no attribute 'strip'
+
+2023-07-03 15:36:30,439 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 96, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True).decode()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb3 in position 4896: invalid start byte
+
+2023-07-03 15:39:23,535 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 96, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True).decode()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb3 in position 4896: invalid start byte
+
+2023-07-03 15:40:32,574 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 82, in run_MySQL_backup
+    conn = pymysql.connect(host=db_host, port=db_port, user=db_user, password=db_password, db=db_name)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 352, in __init__
+    self.connect()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 636, in connect
+    self._request_authentication()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 911, in _request_authentication
+    auth_packet = self._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1049, "Unknown database 'springboot91z9z'")
+
+2023-07-03 15:40:32,574 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 89, in run_MySQL_backup
+    cursor = conn.cursor()
+UnboundLocalError: local variable 'conn' referenced before assignment
+
+2023-07-03 15:41:47,752 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 83, in run_MySQL_backup
+    conn = pymysql.connect(host=db_host, port=db_port, user=db_user, password=db_password, db=db_name)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 352, in __init__
+    self.connect()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 636, in connect
+    self._request_authentication()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 911, in _request_authentication
+    auth_packet = self._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1049, "Unknown database 'springboot91z9z'")
+
+2023-07-03 15:41:47,753 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 91, in run_MySQL_backup
+    cursor = conn.cursor()
+UnboundLocalError: local variable 'conn' referenced before assignment
+
+2023-07-03 15:42:05,547 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 83, in run_MySQL_backup
+    conn = pymysql.connect(host=db_host, port=db_port, user=db_user, password=db_password, db=db_name)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 352, in __init__
+    self.connect()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 636, in connect
+    self._request_authentication()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 911, in _request_authentication
+    auth_packet = self._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1049, "Unknown database 'springboot91z9z'")
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 76, in run_MySQL_backup
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 87, in run_MySQL_backup
+    print(conn)
+UnboundLocalError: local variable 'conn' referenced before assignment
+
+2023-07-03 15:43:33,749 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 83, in run_MySQL_backup
     conn = pymysql.connect(host=db_host, port=db_port, user=db_user, password=db_password, db=db_name)
   File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 352, in __init__
     self.connect()
-  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 668, in connect
-    raise exc
-pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] 由于目标计算机积极拒绝，无法连接。)")
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 636, in connect
+    self._request_authentication()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 911, in _request_authentication
+    auth_packet = self._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1049, "Unknown database 'springboot91z9z'")
+
+2023-07-03 15:44:46,367 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 93, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True).decode()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb3 in position 4896: invalid start byte
+
+2023-07-03 15:49:56,608 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 93, in run_MySQL_backup
+    result = subprocess.check_output(command, shell=True).decode()
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb3 in position 4896: invalid start byte
+
+2023-07-03 15:52:30,893 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 110, in run_MySQL_backup
+    cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-sqp' at line 1")
+
+2023-07-03 15:54:08,401 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 109, in run_MySQL_backup
+    cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-sqp' at line 1")
+
+2023-07-03 15:57:01,271 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 109, in run_MySQL_backup
+    cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-sqp' at line 1")
+
+2023-07-03 15:58:42,435 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 109, in run_MySQL_backup
+    cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-sqp' at line 1")
+
+2023-07-03 16:00:22,362 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 110, in run_MySQL_backup
+    cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-sqp' at line 1")
+
+2023-07-03 16:04:36,439 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 110, in run_MySQL_backup
+    cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-sqp' at line 1")
+
+2023-07-03 16:11:10,762 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 112, in run_MySQL_backup
+    cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-sqp' at line 1")
+
+2023-07-03 16:12:43,538 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 111, in run_MySQL_backup
+    cursor.execute(f"SELECT COUNT(*) FROM [{table_name}]")
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[answer\r]' at line 1")
+
+2023-07-03 16:15:14,930 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 111, in run_MySQL_backup
+    cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-sqp' at line 1")
+
+2023-07-03 16:18:37,223 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 111, in run_MySQL_backup
+    cursor.execute(f"SELECT COUNT(*) FROM `{table_name}`")
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1103, "Incorrect table name 'answer\r'")
+
+2023-07-03 16:19:30,578 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 111, in run_MySQL_backup
+    cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-sqp' at line 1")
+
+2023-07-03 16:22:12,263 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 112, in run_MySQL_backup
+    cursor.execute(f"SELECT COUNT(*) FROM `{table_name}`")
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1103, "Incorrect table name 'qsubjectlib-sqp\r'")
+
+2023-07-03 16:23:26,113 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 113, in run_MySQL_backup
+    cursor.execute(f"SELECT COUNT(*) FROM `{table_name}`")
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1103, "Incorrect table name 'qsubjectlib-sqp\r'")
+
+2023-07-03 16:26:27,821 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 116, in run_MySQL_backup
+    cursor.execute(sql)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1103, "Incorrect table name 'qsubjectlib-sqp\r'")
+
+2023-07-03 16:28:40,186 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 116, in run_MySQL_backup
+    cursor.execute(sql)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1103, "Incorrect table name 'qsubjectlib-sqp\r'")
+
+2023-07-03 16:31:47,469 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 115, in run_MySQL_backup
+    cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1103, "Incorrect table name 'qsubjectlib-sqp\r'")
+
+2023-07-03 16:33:19,879 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 115, in run_MySQL_backup
+    cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1103, "Incorrect table name 'qsubjectlib-sqp\r'")
+
+2023-07-03 16:38:08,011 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 106, in run_MySQL_backup
+    result.append(new_item)
+AttributeError: 'str' object has no attribute 'append'
+
+2023-07-03 16:39:41,726 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 101, in run_MySQL_backup
+    result.append(new_item)
+AttributeError: 'str' object has no attribute 'append'
+
+2023-07-03 16:45:49,250 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 118, in run_MySQL_backup
+    cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-sqp' at line 1")
+
+2023-07-03 16:49:46,140 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 87, in run_MySQL_backup
+    sql = "SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.TABLES  WHERE  TABLE_SCHEMA = '%s' AND TABLE_NAME REGEXP '^[^0-9]+$' AND TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME  NOT IN (SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.TABLES  WHERE  TABLE_TYPE = 'VIEW') AND TABLE_NAME NOT LIKE '%-%' AND TABLE_NAME NOT IN ('CHARACTER_SETS','COLLATIONS','COLLATION_CHARACTER_SET_APPLICABILITY','COLUMNS','COLUMN_PRIVILEGES','ENGINES','EVENTS','FILES','GLOBAL_STATUS','GLOBAL_VARIABLES','KEY_COLUMN_USAGE','OPTIMIZER_TRACE','PARAMETERS','PARTITIONS','PLUGINS','PROCESSLIST','PROFILING','REFERENTIAL_CONSTRAINTS','ROUTINES','SCHEMATA','SCHEMA_PRIVILEGES','SESSION_STATUS','SESSION_VARIABLES','STATISTICS','TABLES','TABLESPACES','TABLE_CONSTRAINTS','TABLE_PRIVILEGES','TRIGGERS','USER_PRIVILEGES','VIEWS','INNODB_LOCKS','INNODB_TRX','INNODB_SYS_DATAFILES','INNODB_FT_CONFIG','INNODB_SYS_VIRTUAL','INNODB_CMP','INNODB_FT_BEING_DELETED','INNODB_CMP_RESET','INNODB_CMP_PER_INDEX','INNODB_CMPMEM_RESET','INNODB_FT_DELETED','INNODB_BUFFER_PAGE_LRU','INNODB_LOCK_WAITS','INNODB_TEMP_TABLE_INFO','INNODB_SYS_INDEXES','INNODB_SYS_TABLES','INNODB_SYS_FIELDS','INNODB_CMP_PER_INDEX_RESET','INNODB_BUFFER_PAGE','INNODB_FT_DEFAULT_STOPWORD','INNODB_FT_INDEX_TABLE','INNODB_FT_INDEX_CACHE','INNODB_SYS_TABLESPACES','INNODB_METRICS','INNODB_SYS_FOREIGN_COLS','INNODB_CMPMEM','INNODB_BUFFER_POOL_STATS','INNODB_SYS_COLUMNS','INNODB_SYS_FOREIGN','INNODB_SYS_TABLESTATS','columns_priv','db','engine_cost','event','func','general_log','gtid_executed','help_category','help_keyword','help_relation','help_topic','innodb_index_stats','innodb_table_stats','ndb_binlog_index','plugin','proc','procs_priv','proxies_priv','server_cost','servers','slave_master_info','slave_relay_log_info','slave_worker_info','slow_log','tables_priv','time_zone','time_zone_leap_second','time_zone_name','time_zone_transition','time_zone_transition_type','user','accounts','cond_instances','events_stages_current','events_stages_history','events_stages_history_long','events_stages_summary_by_account_by_event_name','events_stages_summary_by_host_by_event_name','events_stages_summary_by_thread_by_event_name','events_stages_summary_by_user_by_event_name','events_stages_summary_global_by_event_name','events_statements_current','events_statements_history','events_statements_history_long','events_statements_summary_by_account_by_event_name','events_statements_summary_by_digest','events_statements_summary_by_host_by_event_name','events_statements_summary_by_program','events_statements_summary_by_thread_by_event_name','events_statements_summary_by_user_by_event_name','events_statements_summary_global_by_event_name','events_transactions_current','events_transactions_history','events_transactions_history_long','events_transactions_summary_by_account_by_event_name','events_transactions_summary_by_host_by_event_name','events_transactions_summary_by_thread_by_event_name','events_transactions_summary_by_user_by_event_name','events_transactions_summary_global_by_event_name','events_waits_current','events_waits_history','events_waits_history_long','events_waits_summary_by_account_by_event_name','events_waits_summary_by_host_by_event_name','events_waits_summary_by_instance','events_waits_summary_by_thread_by_event_name','events_waits_summary_by_user_by_event_name','events_waits_summary_global_by_event_name','file_instances','file_summary_by_event_name','file_summary_by_instance','host_cache','hosts','memory_summary_by_account_by_event_name','memory_summary_by_host_by_event_name','memory_summary_by_thread_by_event_name','memory_summary_by_user_by_event_name','memory_summary_global_by_event_name','metadata_locks','mutex_instances','objects_summary_global_by_type','performance_timers','prepared_statements_instances','replication_applier_configuration','replication_applier_status','replication_applier_status_by_coordinator','replication_applier_status_by_worker','replication_connection_configuration','replication_connection_status','replication_group_member_stats','replication_group_members','rwlock_instances','session_account_connect_attrs','session_connect_attrs','setup_actors','setup_consumers','setup_instruments','setup_objects','setup_timers','socket_instances','socket_summary_by_event_name','socket_summary_by_instance','status_by_account','status_by_host','status_by_thread','status_by_user','table_handles','table_io_waits_summary_by_index_usage','table_io_waits_summary_by_table','table_lock_waits_summary_by_table','threads','user_variables_by_thread','users','variables_by_thread','host_summary','host_summary_by_file_io','host_summary_by_file_io_type','host_summary_by_stages','host_summary_by_statement_latency','host_summary_by_statement_type','innodb_buffer_stats_by_schema','innodb_buffer_stats_by_table','io_by_thread_by_latency','io_global_by_file_by_bytes','io_global_by_file_by_latency','io_global_by_wait_by_bytes','io_global_by_wait_by_latency','latest_file_io','memory_by_host_by_current_bytes','memory_by_thread_by_current_bytes','memory_by_user_by_current_bytes','memory_global_by_current_bytes','memory_global_total','metrics','ps_check_lost_instrumentation','schema_auto_increment_columns','schema_index_statistics','schema_object_overview','schema_redundant_indexes','schema_table_lock_waits','schema_table_statistics','schema_table_statistics_with_buffer','schema_tables_with_full_table_scans','schema_unused_indexes','session','session_ssl_status','statement_analysis','statements_with_errors_or_warnings','statements_with_full_table_scans','statements_with_sorting','statements_with_temp_tables','sys_config','user_summary','user_summary_by_file_io','user_summary_by_file_io_type','user_summary_by_stages','user_summary_by_statement_latency','user_summary_by_statement_type','version','wait_classes_global_by_avg_latency','wait_classes_global_by_latency','waits_by_host_by_latency','waits_by_user_by_latency','waits_global_by_latency','x$host_summary','x$host_summary_by_file_io','x$host_summary_by_file_io_type','x$host_summary_by_stages','x$host_summary_by_statement_latency','x$host_summary_by_statement_type','x$innodb_buffer_stats_by_schema','x$innodb_buffer_stats_by_table','x$innodb_lock_waits','x$io_by_thread_by_latency','x$io_global_by_file_by_bytes','x$io_global_by_file_by_latency','x$io_global_by_wait_by_bytes','x$io_global_by_wait_by_latency','x$latest_file_io','x$memory_by_host_by_current_bytes','x$memory_by_thread_by_current_bytes','x$memory_by_user_by_current_bytes','x$memory_global_by_current_bytes','x$memory_global_total','x$processlist','x$ps_digest_avg_latency_distribution','x$ps_schema_table_statistics_io','x$schema_flattened_keys','x$schema_index_statistics','x$schema_table_lock_waits','x$schema_table_statistics','x$schema_table_statistics_with_buffer','x$schema_tables_with_full_table_scans','x$session','x$statement_analysis','x$statements_with_errors_or_warnings','x$statements_with_full_table_scans','x$statements_with_sorting','x$statements_with_temp_tables','x$user_summary','x$user_summary_by_file_io','x$user_summary_by_file_io_type','x$user_summary_by_stages','x$user_summary_by_statement_latency','x$user_summary_by_statement_type','x$wait_classes_global_by_avg_latency','x$wait_classes_global_by_latency','x$waits_by_host_by_latency','x$waits_by_user_by_latency','x$waits_global_by_latency','sys_user')" % db_name
+TypeError: not enough arguments for format string
+
+2023-07-03 16:50:22,505 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 87, in run_MySQL_backup
+    sql = "SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.TABLES  WHERE  TABLE_SCHEMA = '%s' AND TABLE_NAME REGEXP '^[^0-9]+$' AND TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME  NOT IN (SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.TABLES  WHERE  TABLE_TYPE = 'VIEW') AND TABLE_NAME NOT LIKE '%-%' AND TABLE_NAME NOT IN ('CHARACTER_SETS','COLLATIONS','COLLATION_CHARACTER_SET_APPLICABILITY','COLUMNS','COLUMN_PRIVILEGES','ENGINES','EVENTS','FILES','GLOBAL_STATUS','GLOBAL_VARIABLES','KEY_COLUMN_USAGE','OPTIMIZER_TRACE','PARAMETERS','PARTITIONS','PLUGINS','PROCESSLIST','PROFILING','REFERENTIAL_CONSTRAINTS','ROUTINES','SCHEMATA','SCHEMA_PRIVILEGES','SESSION_STATUS','SESSION_VARIABLES','STATISTICS','TABLES','TABLESPACES','TABLE_CONSTRAINTS','TABLE_PRIVILEGES','TRIGGERS','USER_PRIVILEGES','VIEWS','INNODB_LOCKS','INNODB_TRX','INNODB_SYS_DATAFILES','INNODB_FT_CONFIG','INNODB_SYS_VIRTUAL','INNODB_CMP','INNODB_FT_BEING_DELETED','INNODB_CMP_RESET','INNODB_CMP_PER_INDEX','INNODB_CMPMEM_RESET','INNODB_FT_DELETED','INNODB_BUFFER_PAGE_LRU','INNODB_LOCK_WAITS','INNODB_TEMP_TABLE_INFO','INNODB_SYS_INDEXES','INNODB_SYS_TABLES','INNODB_SYS_FIELDS','INNODB_CMP_PER_INDEX_RESET','INNODB_BUFFER_PAGE','INNODB_FT_DEFAULT_STOPWORD','INNODB_FT_INDEX_TABLE','INNODB_FT_INDEX_CACHE','INNODB_SYS_TABLESPACES','INNODB_METRICS','INNODB_SYS_FOREIGN_COLS','INNODB_CMPMEM','INNODB_BUFFER_POOL_STATS','INNODB_SYS_COLUMNS','INNODB_SYS_FOREIGN','INNODB_SYS_TABLESTATS','columns_priv','db','engine_cost','event','func','general_log','gtid_executed','help_category','help_keyword','help_relation','help_topic','innodb_index_stats','innodb_table_stats','ndb_binlog_index','plugin','proc','procs_priv','proxies_priv','server_cost','servers','slave_master_info','slave_relay_log_info','slave_worker_info','slow_log','tables_priv','time_zone','time_zone_leap_second','time_zone_name','time_zone_transition','time_zone_transition_type','user','accounts','cond_instances','events_stages_current','events_stages_history','events_stages_history_long','events_stages_summary_by_account_by_event_name','events_stages_summary_by_host_by_event_name','events_stages_summary_by_thread_by_event_name','events_stages_summary_by_user_by_event_name','events_stages_summary_global_by_event_name','events_statements_current','events_statements_history','events_statements_history_long','events_statements_summary_by_account_by_event_name','events_statements_summary_by_digest','events_statements_summary_by_host_by_event_name','events_statements_summary_by_program','events_statements_summary_by_thread_by_event_name','events_statements_summary_by_user_by_event_name','events_statements_summary_global_by_event_name','events_transactions_current','events_transactions_history','events_transactions_history_long','events_transactions_summary_by_account_by_event_name','events_transactions_summary_by_host_by_event_name','events_transactions_summary_by_thread_by_event_name','events_transactions_summary_by_user_by_event_name','events_transactions_summary_global_by_event_name','events_waits_current','events_waits_history','events_waits_history_long','events_waits_summary_by_account_by_event_name','events_waits_summary_by_host_by_event_name','events_waits_summary_by_instance','events_waits_summary_by_thread_by_event_name','events_waits_summary_by_user_by_event_name','events_waits_summary_global_by_event_name','file_instances','file_summary_by_event_name','file_summary_by_instance','host_cache','hosts','memory_summary_by_account_by_event_name','memory_summary_by_host_by_event_name','memory_summary_by_thread_by_event_name','memory_summary_by_user_by_event_name','memory_summary_global_by_event_name','metadata_locks','mutex_instances','objects_summary_global_by_type','performance_timers','prepared_statements_instances','replication_applier_configuration','replication_applier_status','replication_applier_status_by_coordinator','replication_applier_status_by_worker','replication_connection_configuration','replication_connection_status','replication_group_member_stats','replication_group_members','rwlock_instances','session_account_connect_attrs','session_connect_attrs','setup_actors','setup_consumers','setup_instruments','setup_objects','setup_timers','socket_instances','socket_summary_by_event_name','socket_summary_by_instance','status_by_account','status_by_host','status_by_thread','status_by_user','table_handles','table_io_waits_summary_by_index_usage','table_io_waits_summary_by_table','table_lock_waits_summary_by_table','threads','user_variables_by_thread','users','variables_by_thread','host_summary','host_summary_by_file_io','host_summary_by_file_io_type','host_summary_by_stages','host_summary_by_statement_latency','host_summary_by_statement_type','innodb_buffer_stats_by_schema','innodb_buffer_stats_by_table','io_by_thread_by_latency','io_global_by_file_by_bytes','io_global_by_file_by_latency','io_global_by_wait_by_bytes','io_global_by_wait_by_latency','latest_file_io','memory_by_host_by_current_bytes','memory_by_thread_by_current_bytes','memory_by_user_by_current_bytes','memory_global_by_current_bytes','memory_global_total','metrics','ps_check_lost_instrumentation','schema_auto_increment_columns','schema_index_statistics','schema_object_overview','schema_redundant_indexes','schema_table_lock_waits','schema_table_statistics','schema_table_statistics_with_buffer','schema_tables_with_full_table_scans','schema_unused_indexes','session','session_ssl_status','statement_analysis','statements_with_errors_or_warnings','statements_with_full_table_scans','statements_with_sorting','statements_with_temp_tables','sys_config','user_summary','user_summary_by_file_io','user_summary_by_file_io_type','user_summary_by_stages','user_summary_by_statement_latency','user_summary_by_statement_type','version','wait_classes_global_by_avg_latency','wait_classes_global_by_latency','waits_by_host_by_latency','waits_by_user_by_latency','waits_global_by_latency','x$host_summary','x$host_summary_by_file_io','x$host_summary_by_file_io_type','x$host_summary_by_stages','x$host_summary_by_statement_latency','x$host_summary_by_statement_type','x$innodb_buffer_stats_by_schema','x$innodb_buffer_stats_by_table','x$innodb_lock_waits','x$io_by_thread_by_latency','x$io_global_by_file_by_bytes','x$io_global_by_file_by_latency','x$io_global_by_wait_by_bytes','x$io_global_by_wait_by_latency','x$latest_file_io','x$memory_by_host_by_current_bytes','x$memory_by_thread_by_current_bytes','x$memory_by_user_by_current_bytes','x$memory_global_by_current_bytes','x$memory_global_total','x$processlist','x$ps_digest_avg_latency_distribution','x$ps_schema_table_statistics_io','x$schema_flattened_keys','x$schema_index_statistics','x$schema_table_lock_waits','x$schema_table_statistics','x$schema_table_statistics_with_buffer','x$schema_tables_with_full_table_scans','x$session','x$statement_analysis','x$statements_with_errors_or_warnings','x$statements_with_full_table_scans','x$statements_with_sorting','x$statements_with_temp_tables','x$user_summary','x$user_summary_by_file_io','x$user_summary_by_file_io_type','x$user_summary_by_stages','x$user_summary_by_statement_latency','x$user_summary_by_statement_type','x$wait_classes_global_by_avg_latency','x$wait_classes_global_by_latency','x$waits_by_host_by_latency','x$waits_by_user_by_latency','x$waits_global_by_latency','sys_user')" % db_name
+TypeError: not enough arguments for format string
+
+2023-07-03 16:51:58,314 - ERROR - Traceback (most recent call last):
+  File "D:\.Jetbrain\PycharmProjects\DBOuput\MySQLOutput.py", line 87, in run_MySQL_backup
+    sql = "SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.TABLES  WHERE  TABLE_SCHEMA = '%s' AND TABLE_NAME REGEXP '^[^0-9]+$' AND TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME  NOT IN (SELECT TABLE_NAME  FROM INFORMATION_SCHEMA.TABLES  WHERE  TABLE_TYPE = 'VIEW') AND TABLE_NAME NOT LIKE '%-%' AND TABLE_NAME NOT IN ('CHARACTER_SETS','COLLATIONS','COLLATION_CHARACTER_SET_APPLICABILITY','COLUMNS','COLUMN_PRIVILEGES','ENGINES','EVENTS','FILES','GLOBAL_STATUS','GLOBAL_VARIABLES','KEY_COLUMN_USAGE','OPTIMIZER_TRACE','PARAMETERS','PARTITIONS','PLUGINS','PROCESSLIST','PROFILING','REFERENTIAL_CONSTRAINTS','ROUTINES','SCHEMATA','SCHEMA_PRIVILEGES','SESSION_STATUS','SESSION_VARIABLES','STATISTICS','TABLES','TABLESPACES','TABLE_CONSTRAINTS','TABLE_PRIVILEGES','TRIGGERS','USER_PRIVILEGES','VIEWS','INNODB_LOCKS','INNODB_TRX','INNODB_SYS_DATAFILES','INNODB_FT_CONFIG','INNODB_SYS_VIRTUAL','INNODB_CMP','INNODB_FT_BEING_DELETED','INNODB_CMP_RESET','INNODB_CMP_PER_INDEX','INNODB_CMPMEM_RESET','INNODB_FT_DELETED','INNODB_BUFFER_PAGE_LRU','INNODB_LOCK_WAITS','INNODB_TEMP_TABLE_INFO','INNODB_SYS_INDEXES','INNODB_SYS_TABLES','INNODB_SYS_FIELDS','INNODB_CMP_PER_INDEX_RESET','INNODB_BUFFER_PAGE','INNODB_FT_DEFAULT_STOPWORD','INNODB_FT_INDEX_TABLE','INNODB_FT_INDEX_CACHE','INNODB_SYS_TABLESPACES','INNODB_METRICS','INNODB_SYS_FOREIGN_COLS','INNODB_CMPMEM','INNODB_BUFFER_POOL_STATS','INNODB_SYS_COLUMNS','INNODB_SYS_FOREIGN','INNODB_SYS_TABLESTATS','columns_priv','db','engine_cost','event','func','general_log','gtid_executed','help_category','help_keyword','help_relation','help_topic','innodb_index_stats','innodb_table_stats','ndb_binlog_index','plugin','proc','procs_priv','proxies_priv','server_cost','servers','slave_master_info','slave_relay_log_info','slave_worker_info','slow_log','tables_priv','time_zone','time_zone_leap_second','time_zone_name','time_zone_transition','time_zone_transition_type','user','accounts','cond_instances','events_stages_current','events_stages_history','events_stages_history_long','events_stages_summary_by_account_by_event_name','events_stages_summary_by_host_by_event_name','events_stages_summary_by_thread_by_event_name','events_stages_summary_by_user_by_event_name','events_stages_summary_global_by_event_name','events_statements_current','events_statements_history','events_statements_history_long','events_statements_summary_by_account_by_event_name','events_statements_summary_by_digest','events_statements_summary_by_host_by_event_name','events_statements_summary_by_program','events_statements_summary_by_thread_by_event_name','events_statements_summary_by_user_by_event_name','events_statements_summary_global_by_event_name','events_transactions_current','events_transactions_history','events_transactions_history_long','events_transactions_summary_by_account_by_event_name','events_transactions_summary_by_host_by_event_name','events_transactions_summary_by_thread_by_event_name','events_transactions_summary_by_user_by_event_name','events_transactions_summary_global_by_event_name','events_waits_current','events_waits_history','events_waits_history_long','events_waits_summary_by_account_by_event_name','events_waits_summary_by_host_by_event_name','events_waits_summary_by_instance','events_waits_summary_by_thread_by_event_name','events_waits_summary_by_user_by_event_name','events_waits_summary_global_by_event_name','file_instances','file_summary_by_event_name','file_summary_by_instance','host_cache','hosts','memory_summary_by_account_by_event_name','memory_summary_by_host_by_event_name','memory_summary_by_thread_by_event_name','memory_summary_by_user_by_event_name','memory_summary_global_by_event_name','metadata_locks','mutex_instances','objects_summary_global_by_type','performance_timers','prepared_statements_instances','replication_applier_configuration','replication_applier_status','replication_applier_status_by_coordinator','replication_applier_status_by_worker','replication_connection_configuration','replication_connection_status','replication_group_member_stats','replication_group_members','rwlock_instances','session_account_connect_attrs','session_connect_attrs','setup_actors','setup_consumers','setup_instruments','setup_objects','setup_timers','socket_instances','socket_summary_by_event_name','socket_summary_by_instance','status_by_account','status_by_host','status_by_thread','status_by_user','table_handles','table_io_waits_summary_by_index_usage','table_io_waits_summary_by_table','table_lock_waits_summary_by_table','threads','user_variables_by_thread','users','variables_by_thread','host_summary','host_summary_by_file_io','host_summary_by_file_io_type','host_summary_by_stages','host_summary_by_statement_latency','host_summary_by_statement_type','innodb_buffer_stats_by_schema','innodb_buffer_stats_by_table','io_by_thread_by_latency','io_global_by_file_by_bytes','io_global_by_file_by_latency','io_global_by_wait_by_bytes','io_global_by_wait_by_latency','latest_file_io','memory_by_host_by_current_bytes','memory_by_thread_by_current_bytes','memory_by_user_by_current_bytes','memory_global_by_current_bytes','memory_global_total','metrics','ps_check_lost_instrumentation','schema_auto_increment_columns','schema_index_statistics','schema_object_overview','schema_redundant_indexes','schema_table_lock_waits','schema_table_statistics','schema_table_statistics_with_buffer','schema_tables_with_full_table_scans','schema_unused_indexes','session','session_ssl_status','statement_analysis','statements_with_errors_or_warnings','statements_with_full_table_scans','statements_with_sorting','statements_with_temp_tables','sys_config','user_summary','user_summary_by_file_io','user_summary_by_file_io_type','user_summary_by_stages','user_summary_by_statement_latency','user_summary_by_statement_type','version','wait_classes_global_by_avg_latency','wait_classes_global_by_latency','waits_by_host_by_latency','waits_by_user_by_latency','waits_global_by_latency','x$host_summary','x$host_summary_by_file_io','x$host_summary_by_file_io_type','x$host_summary_by_stages','x$host_summary_by_statement_latency','x$host_summary_by_statement_type','x$innodb_buffer_stats_by_schema','x$innodb_buffer_stats_by_table','x$innodb_lock_waits','x$io_by_thread_by_latency','x$io_global_by_file_by_bytes','x$io_global_by_file_by_latency','x$io_global_by_wait_by_bytes','x$io_global_by_wait_by_latency','x$latest_file_io','x$memory_by_host_by_current_bytes','x$memory_by_thread_by_current_bytes','x$memory_by_user_by_current_bytes','x$memory_global_by_current_bytes','x$memory_global_total','x$processlist','x$ps_digest_avg_latency_distribution','x$ps_schema_table_statistics_io','x$schema_flattened_keys','x$schema_index_statistics','x$schema_table_lock_waits','x$schema_table_statistics','x$schema_table_statistics_with_buffer','x$schema_tables_with_full_table_scans','x$session','x$statement_analysis','x$statements_with_errors_or_warnings','x$statements_with_full_table_scans','x$statements_with_sorting','x$statements_with_temp_tables','x$user_summary','x$user_summary_by_file_io','x$user_summary_by_file_io_type','x$user_summary_by_stages','x$user_summary_by_statement_latency','x$user_summary_by_statement_type','x$wait_classes_global_by_avg_latency','x$wait_classes_global_by_latency','x$waits_by_host_by_latency','x$waits_by_user_by_latency','x$waits_global_by_latency','sys_user')" % db_name
+TypeError: not enough arguments for format string
 
