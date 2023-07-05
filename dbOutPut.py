@@ -148,9 +148,7 @@ def run_MySQL_backup():
                 else:
                     print(f"备份文件已存在：{backup_file}")
                 # 拼接命令行命令
-                db_password = db_password.replace('$', '\\$')
                 file_name = "set_Tables.txt"
-
                 with open(file_name, 'w') as f:
                     for item in tables_to_backup:
                         f.write(item + '\n')
@@ -179,7 +177,6 @@ def run_MogoDB_backup():
         db_name = "zk_model_tqmsn"
         db_name_options = {"1": "config", "2": "metadata", "3": "admin", "4": "drgs-auto", "5": "local"}
         dump_command = "dump.bat  27017  "
-
         # 提示用户输入数据库名称
         try:
             db_name_input = inputimeout(

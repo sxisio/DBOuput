@@ -145,9 +145,7 @@ def run_MySQL_backup():
                 else:
                     print(f"备份文件已存在：{backup_file}")
                 # 拼接命令行命令
-                db_password = db_password.replace('$', '\\$')
                 file_name = "set_Tables.txt"
-
                 with open(file_name, 'w') as f:
                     for item in tables_to_backup:
                         f.write(item + '\n')
