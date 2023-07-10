@@ -42,7 +42,7 @@ def Run_Environment_Variable_Detection():
 #             ctypes.windll.shell32.ShellExecuteW(None, "runas", "python", script_path, None, 1)
 #         except:
 #             print("无法以管理员权限运行程序")
-def run_MySQL_backup():
+def run_MySQL_Backup():
     print("正在执行MySQL备份...")
 
     try:
@@ -117,5 +117,5 @@ def run_MySQL_backup():
 
 if __name__ == '__main__':
 
-    run_MySQL_backup()
+    run_MySQL_Backup()
 

@@ -13,8 +13,7 @@ from inputimeout import inputimeout, TimeoutOccurred
 import traceback
 import logging
 
-# 配置日志记录器
-logging.basicConfig(filename='error.log', level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
+
 def Run_Environment_Variable_Detection():
     backup_home = os.getenv('Backup_HOME')
     path = os.getenv('PATH')
@@ -49,7 +48,7 @@ def create_xml():
     tree.write('MysqlOutPut.xml')
 
 
-def run_MySQL_backup():
+def run_MySQL_Backup():
     print("正在执行MySQL备份...")
     if_staut=0
     try:
@@ -57,7 +56,6 @@ def run_MySQL_backup():
         if not os.path.exists('MysqlOutPut.xml'):
             print('MysqlOutPut.xml,不存在，即将创建')
             create_xml()
-
         # 读取XML文件中的数据库配置信息和备份文件保存路径
         tree = ET.parse('MysqlOutPut.xml')
         root = tree.getroot()
@@ -159,6 +157,8 @@ def run_MySQL_backup():
                 os.system(cmd)
                 print('清屏！')
                 os.system('cls' if os.name == 'nt' else 'clear')
+                restore_MySQL_backup(backup_file, db_user, db_password, db_host, db_port)
+                backup_test_database(backup_file)
         except Exception as e:
             print("连接数据库失败！")
             # 如果发生异常，则将异常信息记录到日志文件中
@@ -168,7 +168,65 @@ def run_MySQL_backup():
         # 如果发生异常，则将异常信息记录到日志文件中
         logging.error(traceback.format_exc())
 
-
+def restore_MySQL_backup(backup_file, db_user, db_password, db_host, db_port):
+    print("正在执行 MySQL 备份还原...")
+    try:
+         # 连接到数据库
+        conn = pymysql.connect(host=db_host, port=db_port, user=db_user, password=db_password)
+        cursor = conn.cursor()
+        # 删除 test 数据库中的所有数据
+        print('删除 test 数据库中的所有数据')
+        try:
+            cursor.execute("DROP DATABASE IF EXISTS test")
+            cursor.execute("CREATE DATABASE test")
+        except Exception as e:
+            print(f"删除失败：{e}")
+            # 如果发生异常，则将异常信息记录到日志文件中
+            logging.error(traceback.format_exc())
+        # 关闭数据库连接
+        cursor.close()
+        conn.close()
+        # 拼接命令行命令
+        command = f"mysql -u {db_user} -p{db_password} -h {db_host} -P {db_port} test < {backup_file}"
+        # 执行命令行命令
+        os.system(command)
+        print(f"备份还原成功：{backup_file}")
+    except Exception as e:
+        # 如果发生异常，则打印异常信息
+        print(f"备份还原失败：{e}")
+        # 如果发生异常，则将异常信息记录到日志文件中
+        logging.error(traceback.format_exc())
+def backup_test_database(backup_file):
+    print("正在执行 MySQL 备份...")
+    try:
+        # 检查 XML 文件是否存在，如果不存在则抛出异常
+        if not os.path.exists('MysqlOutPut.xml'):
+            raise Exception('MysqlOutPut.xml 文件不存在')
+        # 读取 XML 文件中的数据库配置信息和备份文件保存路径
+        tree = ET.parse('MysqlOutPut.xml')
+        root = tree.getroot()
+        db_host = root.find('db_host').text
+        db_port = int(root.find('db_port').text)
+        db_user = root.find('db_user').text
+        db_password = root.find('db_password').text
+        backup_path = root.find('Outdir').text
+        # 获取当前时间
+        date = time.strftime('%Y%m%d%H%M%S')
+        # 拼接备份文件名
+        new_backup_file = f"test_{date}.mbi"
+        # 拼接命令行命令
+        command = f"mysqlbackup --user={db_user} --password={db_password} --host={db_host} --port={db_port} --backup-dir={backup_path} --databases=test backup-to-image={new_backup_file}"
+        # 执行命令行命令
+        os.system(command)
+        print(f"备份成功：{new_backup_file}")
+        # 删除旧的备份文件
+        if os.path.exists(backup_file):
+            os.remove(backup_file)
+            print(f"已删除旧的备份文件：{backup_file}")
+        print(f"已删除旧的备份文件：{backup_file}")
+    except Exception as e:
+        # 如果发生异常，则打印异常信息
+        print(f"备份失败：{e}")
 def run_MogoDB_backup():
     try:
         print("程序正在执行！！")
@@ -218,6 +276,7 @@ def run_MogoDB_backup():
     except Exception as e:
         # 如果发生异常，则将异常信息记录到日志文件中
         logging.error(traceback.format_exc())
+
 def countdown():
     today = datetime.now().weekday()+1
     next_run_time = scheduler.get_jobs()[1].next_run_time
@@ -229,10 +288,12 @@ def countdown():
 
 def run_Combined_backup():
     run_MogoDB_backup()
-    run_MySQL_backup()
+    run_MySQL_Backup()
 
 
 if __name__ == '__main__':
+    # 配置日志记录器
+    logging.basicConfig(filename='error.log', level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
     # 更换命令，取消配置环境变量#
     # print("正在检测，并设置环境变量...")
     # Run_Environment_Variable_Detection()
